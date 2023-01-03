@@ -1,0 +1,53 @@
+/*
+font-family: 'Rubik Vinyl', cursive;
+font-family: 'Dancing Script', cursive;
+*/
+
+h1{
+color: red; /*Comentario*/
+background-color: aqua;
+text-align:  center;
+font-family: 'Rubik Vinyl', cursive;
+font-size: 40px;
+border-radius: 41px 41px 41px 41px;
+}
+
+h2{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 22px;
+display: inline-block;
+}
+
+#cabecera
+{
+    color: blue;
+    background-color: bisque;
+    border-radius: 0px 0px 200px 0px;
+    border: 6px solid #cacaca;      
+}
+span
+{
+font-weight: bold;
+font-style: italic;
+
+}
+
+
+a:visited
+{
+    color: green;
+}
+.secundario
+{
+    column-count: 3;
+    column-gap: 15px;
+    column-rule: 3px groove #000000;    
+}
+
+.letras
+{
+    font-family: 'Dancing Script', cursive;
+    color: black;
+
+}
+

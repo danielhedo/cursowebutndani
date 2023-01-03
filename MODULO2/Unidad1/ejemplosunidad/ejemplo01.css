@@ -1,0 +1,24 @@
+
+
+.caja
+{
+width: 400px;
+height: 400px;
+padding: 30px;
+background: linear-gradient(to right, #fefcea 43%,#f1da36 100%);
+box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.58);/*eje x, eje y, desenfocado y color*/
+text-shadow: 7px 4px 4px rgba(251,4,4,0.6);
+border-radius: 20px;
+}
+
+.menu
+{
+width: 400px;
+height: 400px;
+padding: 30px;
+background: linear-gradient(to right, #fefcea 43%,#fc6925 100%);
+box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.58);/*eje x, eje y, desenfocado y color*/
+text-shadow: 7px 4px 4px rgba(251,4,4,0.6);
+border-radius: 0px 0px 148px 147px;
+border: 29px double #060606;
+}
