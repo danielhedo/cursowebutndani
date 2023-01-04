@@ -1,0 +1,44 @@
+
+.contenedor
+{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    border: 1px solid black;
+    height: 300px;    
+    align-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+  }
+
+.rojo
+{
+background-color: red;
+
+}
+
+.azul
+{
+background-color: blue;
+
+}
+
+.verde
+{
+background-color: green;
+
+}
+
+.item
+{
+width: 100px;
+height: 100px;
+font-size: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
