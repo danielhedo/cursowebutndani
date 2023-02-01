@@ -1,0 +1,48 @@
+.general
+{
+    font-family: 'Nunito', Helvetica,Arial,Lucida,sans-serif;
+}
+
+.titulo
+{
+
+    font-weight: 800;
+}
+
+h2
+{
+    font-weight: 600;
+
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link 
+{
+    color: black;
+    background-color: #f3f3f3;
+} 
+
+.navbar-nav > li > .dropdown-menu a:hover { background-color: #f3f3f3; }
+
+#lista li {
+    display:inline;
+    padding-left:2%;
+    padding-right:2%;
+   list-style: none;
+}
+
+#lista li a a:hover{
+    color:black;
+    text-decoration: none;
+}
+
+#lista li a {
+    color:black;
+    text-decoration: none;
+}
+
+.destacado
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
