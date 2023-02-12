@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinario Huellitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/estilos.css">
+</head>
+<body style="background-color: #f3f3f3;">
+<div style="padding-left: 17%; padding-right: 17%; padding-top: 1%; padding-bottom: 1%;" class="general">
+    <div class="container-fluid">
+        
+        <div class="container-fluid" style="padding-top: 0%; padding-left: 0%;background-color: #ffffff;"><a href="index.html"><img src="img/logo.png" alt="Huellitas"></a></div>        
+        <!--Menú-->
+        <nav class="navbar navbar-expand-lg" style="background-color: #ffffff; padding-top: 0%; margin-right: 0%;">
+            <div class="container-fluid"">
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Servicios
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Servicio 1</a></li>
+                      <li><a class="dropdown-item" href="#">Servicio 2</a></li>
+                      <li><a class="dropdown-item" href="#">Servicio 3</a></li>
+                      <li><a class="dropdown-item" href="#">Servicio 4</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="promociones.html">Promociones</a>
+                  </li>                                       
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                  </li>                  
+                  <li class="nav-item">
+                    <a class="nav-link active" href="contacto.html">Contacto</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav sm-icons">
+                  <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"><i class="fab fa-twitter"></i></a></li>
+              </ul>                
+              </div>
+            </div>
+          </nav>
+          <!--Fin menú-->
+    <!--carrusel-->
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="img/banners/banner1.webp" class="d-block w-100" alt="¡No te pierdas esta oferta!">
+            <div class="carousel-caption d-none d-md-block">              
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="img/banners/banner2.webp" class="d-block w-100" alt="¡No te pierdas esta oferta!">
+            <div class="carousel-caption d-none d-md-block">              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/banners/banner3.webp" class="d-block w-100" alt="¡No te pierdas esta oferta!">
+            <div class="carousel-caption d-none d-md-block">              
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    <!--Fin carrusel-->
+    <!--------------------------------------------------- Contenido de cada página --------------------------------------------------------------------->
+    <div class="container-fluid" style="background:#ffffff; padding-bottom: 6%;">
+        <div class="row">
+          <!-- Inicio de columna izquierda-->
+            <div class="col-10"> <h2 style="padding-top: 1%;">Contacto</h2>                    
+                      <div class="row">
+                        <!--Grid column-->
+                        <div class="col-md-9 mb-md-0 mb-5">
+                            <form id="contact-form" name="contact-form" action="" method=""><!--POST??-->                
+                                <!--Fila 1-->
+                                <div class="row">                
+                                    <!--Campo1-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                          <label for="name" class="">Nombre</label>  
+                                          <input type="text" id="name" name="name" class="form-control">                                            
+                                        </div>
+                                    </div>
+                                    <!-- FIN -->
+
+                                    <!--Campo2-->
+                                    <div class="col-md-6">
+                                      <div class="md-form mb-0">
+                                        <label for="apellido" class="">Apellidos</label>  
+                                        <input type="text" id="ape" name="apellido" class="form-control">                                            
+                                      </div>
+                                    </div>
+                                    <!-- FIN -->
+                                </div>
+                                <!--Fin Fila-->                                
+                
+                                <!--Fila 2-->
+                                <div class="row">
+                                    <!--Campo3-->
+                                    <div class="col-md-6">
+                                      <div class="md-form mb-0">
+                                        <label for="email" class="">Email</label>  
+                                        <input type="text" id="email" name="email" class="form-control">                                            
+                                      </div>
+                                    </div> 
+                                    <!-- FIN -->
+                                    <!--Campo4-->
+                                    <div class="col-md-6">
+                                      <div class="md-form mb-0">
+                                        <label for="telf" class="">Teléfono</label>  
+                                        <input type="text" id="telf" name="telf" class="form-control">                                            
+                                      </div>
+                                    </div> 
+                                    <!-- FIN -->
+                                </div>
+                                <!--Fin Fila-->
+                
+                                <!--Fila 3-->
+                                <div class="row">
+                                  <!--Campo5-->
+                                  <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                      <label for="asunto" class="">Asunto</label>  
+                                      <input type="text" id="asunto" name="asunto" class="form-control">
+                                    </div>
+                                  </div>
+                                  <!-- FIN -->
+                                </div>
+                                <div class="row">
+                                  <!--Campo6-->
+                                  <div class="col-md-12">                
+                                    <div class="md-form">
+                                      <label for="mensaje">Consulta</label>  
+                                      <textarea type="text" id="mensaje" name="mensaje" rows="2" class="form-control md-textarea tamanotextarea"></textarea>
+                                    </div>            
+                                  </div>
+                                  <!-- FIN -->
+                                </div>                
+                            </form>
+                
+                            <div class="text-center text-md-left" style="margin-top: 2%;">
+                                <a class="btn btn-primary" onclick="">Enviar</a>
+                            </div>                            
+                            
+                        </div>
+                        <!--Grid column-->
+                
+                        <!--Grid column-->
+                        <div class="col-md-3 text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                  <a class="enlacesindecoracion" href="https://goo.gl/maps/rrLXbygveGzqHykt8" target="_blank">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                    <p>Calle Gran Vía,1 Madrid</p>
+                                  </a>
+                                </li>
+                
+                                <li>
+                                  <a class="enlacesindecoracion" href="tel:+34915554422">
+                                    <i class="fas fa-phone mt-3 fa-2x"></i>
+                                    <p>91 555 44 22</p>
+                                  </a>
+                                </li>
+                
+                                <li>
+                                  <a class="enlacesindecoracion" href="mailto:vethuellitas@vet.com">
+                                    <i class="fas fa-envelope mt-3 fa-2x"></i>
+                                    <p>vethuellitas@vet.com</p>
+                                  </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column--> 
+                    </div>                
+
+            </div><!-- Final de columna izquierda-->
+            
+            <div class="col-2" style="padding-left: 0%; padding-right: 0%;">
+                <div class="card" >
+                    <div class="card-body">
+                      <h5 class="card-title"><i class="fa-regular fa-user"></i> Login</h5>
+                      
+                      <form class="row g-3 needs-validation was-validated" novalidate="">                        
+                          
+                          <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="validationCustom01" required placeholder="Usuario">
+                        </div>                        
+                        
+                        <div class="input-group has-validation">
+                          <input type="password" class="form-control" id="validationCustom03" required="" placeholder="Contraseña">          
+                        </div>   
+                        
+                        <div class="col-12">
+                          <div class="form"> <!-- form-check -->
+                            <input class="form-input" type="checkbox" value="" id="invalidCheck"> <!--form-check-input-->
+                            <label class="form-label" for="invalidCheck">Recordar</label><!--form-check-label-->
+                            
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <button class="btn btn-primary" type="submit">Entrar</button>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------- Fin Contenido de cada página --------------------------------------------------------------------->
+    <div class="container-fluid" style="background-color: #f3f3f3; text-align:center; margin-top: 1%;">
+      <ul id="lista" style="padding-left: 0;">
+        <li><a href="#" title="Aviso legal">Aviso legal</a></li>
+        <li><a href="#" title="Aviso legal">Política de privacidad</a></li>
+        <li><a href="#" title="Aviso legal">Condiciones Generales</a></li>
+        <li><a href="#" title="Aviso legal">Política de Cookies</a></li>
+      </ul>
+      
+    </div>    
+  </div> 
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+</body>
+</html>
