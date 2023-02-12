@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>       
+       
+    /** 
+    Crear el código que reciba como parámetro un array de números y devuelva el mayor.
+    **/
+
+    const maxvalores = prompt('¿Cuantos valores vas a introducir?', '');
+
+
+    /** Rellenamos el array **/
+
+    var arrayInt = new Array(maxvalores);
+
+
+        for (let c = 0; c < maxvalores; c++) 
+        {
+            var a = parseInt(c) + 1;
+            var num = prompt('Número ' + a, '');
+            arrayInt[c] = num;            
+        }
+
+
+    /** Recorremos el array y buscamos el mayor **/
+
+    let mayor = parseInt(arrayInt[0]);
+
+    for (let index = 1; index <= arrayInt.length-1; index++) 
+        {
+        
+            if (mayor < parseInt(arrayInt[index]))
+            {
+                mayor = arrayInt[index];
+            }
+             
+        }
+
+    document.write("El número mayor de los introducidos es el: " + mayor)
+                    
+    </script>
+    
+</body>
+</html>
