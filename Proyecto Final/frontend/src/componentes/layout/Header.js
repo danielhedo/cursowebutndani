@@ -10,7 +10,7 @@ const Header = (props) => {
         alignItems: "left"
       }}
     >
-      <a href="index.html">
+      <a href="/">
         <img src={"img/logo.png"} alt="Huellitas"></img>
       </a>
     </Container>
