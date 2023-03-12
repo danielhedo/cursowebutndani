@@ -1,13 +1,14 @@
+
+import React from "react";
+
 import { Container } from "react-bootstrap";
 
 const Header = (props) => {
   return (
     <Container
-      style={{
-        paddingTop: "0%",
-        paddingLeft: "0%",
+      style={{        
         backgroundColor: "#ffffff",
-        alignItems: "left"
+        alignItems: "left",        
       }}
     >
       <a href="/">

@@ -24,35 +24,6 @@ h2
 
 .navbar-nav > li > .dropdown-menu a:hover { background-color: #f3f3f3; }
 
-#lista li {
-    display:inline;
-    padding-left:2%;
-    padding-right:2%;
-   list-style: none;
-}
-
-#lista li a a:hover{
-    color:black;
-    text-decoration: none;
-}
-
-#lista li a {
-    color:black;
-    text-decoration: none;
-}
-
-.destacado
-{
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-
-.header {
-    color: #36A0FF;
-    font-size: 27px;
-    padding: 10px;
-}
 
 .bigicon {
     font-size: 35px;
@@ -69,8 +40,5 @@ h2
     color:black;
 }
 
-.tamanotextarea {
-    /*Se copia con el inspector de chrome la propiedad de textarea y se aumenta el tamaño forzándolo con important*/
-    min-height: calc(8em + 0.75rem + calc(var(--bs-border-width) * 2)) !important;    
-}
+
 /* fin contacto */

@@ -1,0 +1,19 @@
+.listaiconos
+{
+    display: flex;
+}
+
+.listaiconos li
+{
+flex-grow: 5;
+}
+
+.listaiconos li a {
+    color:black;
+    text-decoration: none;
+}
+
+.diviconos
+{
+    padding-top: 3%;
+}
