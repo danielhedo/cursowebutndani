@@ -4,11 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config();
+var session = require('express-session');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 //Acceso administrador
 var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
 
 var app = express();
 
@@ -22,11 +26,43 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'e2d3f4a1b6c9e0fb3d2a15c8f7e6b8d1c7f9a0e3b2d8e1f6c5a9b0d1e8f6a1c',
+  cookie: {maxAge: null },
+  resave: false,
+  saveUninitialized: true
+}))
+
+
+secured = async (req, res, next) => 
+  {
+    try
+      {
+      console.log(req.session.id_usuario);
+      if (req.session.id_usuario)
+          {
+            next();
+          }
+          else
+          {
+            res.redirect('/admin/login');
+
+          }
+      }
+      catch (error)
+      {
+      console.log(error);
+      }
+
+  }
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 //administrador
 app.use('/admin/login',loginRouter);
+app.use('/admin/novedades',secured, adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
