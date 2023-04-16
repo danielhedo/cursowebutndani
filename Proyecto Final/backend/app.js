@@ -12,7 +12,7 @@ var usersRouter = require('./routes/users');
 
 //Acceso administrador
 var loginRouter = require('./routes/admin/login');
-var adminRouter = require('./routes/admin/novedades');
+var adminRouter = require('./routes/admin/blog');
 
 var app = express();
 
@@ -62,7 +62,7 @@ app.use('/users', usersRouter);
 
 //administrador
 app.use('/admin/login',loginRouter);
-app.use('/admin/novedades',secured, adminRouter);
+app.use('/admin/blog',secured, adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

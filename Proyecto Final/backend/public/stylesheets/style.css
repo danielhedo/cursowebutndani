@@ -3,6 +3,25 @@
  background-color: #f3f3f3;
  }
 
+ .generalbackend
+ {
+  padding-left: 17%; 
+  padding-right: 17%; 
+  padding-top: 1%; 
+  padding-bottom: 1%;
+ }
+
+ .general
+{
+    font-family: 'Nunito', Helvetica,Arial,Lucida,sans-serif;
+}
+
+.fluid-style
+{
+  padding-top: 0%; 
+  padding-left: 0%;
+  background-color: #ffffff;
+}
 
 
  .App
@@ -69,4 +88,64 @@
 .listabaja li
 {
 flex-grow: 11;
+}
+
+.logout
+{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%; 
+  padding-right: 2%;
+}
+
+.bienvenido
+{
+  text-align: left; 
+  
+  margin: 0; 
+  margin-left: 25px;
+}
+
+.negro
+{
+  font-weight: bold; 
+  color: black;
+  text-decoration: none;
+}
+
+.salida
+{
+  align-self: flex-end; 
+  text-align: right;
+}
+
+.display-btn-post
+{
+  display: flex; 
+  align-items: center;
+}
+
+.paginageneral
+{
+   background-color: white;
+   padding: 3%;
+   padding-right: 5%;
+}
+
+.contentText
+{
+   text-align: justify;
+}
+
+.generaltablaBlog
+ {  
+    padding: 3%;
+    padding-right: 15%;
+    padding-left: 15%;
+ }
+ 
+ .disabled-input {
+  background-color: #eee;
+  color: #777;
 }
