@@ -13,7 +13,7 @@
     </div>
 </div>
 <div class="container generalbackend">
-    <form action="/admin/blog/nuevo" method="post">
+    <form action="/admin/blog/nuevo" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="form-group">
                 <label for="titulo">Título</label>
@@ -37,6 +37,14 @@
                 <label for="url_imagen">URL de imagen</label>
                 <div class="input-group mb-3">                    
                     <input type="text" class="form-control" id="url_imagen" name="url_imagen">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="imagen_cloudinary">URL Cloudinary</label>
+                <div class="input-group mb-3">                    
+                    <input type="file" class="form-control" id="imagen_cloudinary" name="imagen_cloudinary">
                 </div>
             </div>
         </div>

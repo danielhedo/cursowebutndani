@@ -4,7 +4,14 @@ var pool = require('./db');
 
 async function getEntradasBlog ()
 {    
-        var query = 'SELECT id, titulo from blog';
+        var query = 'SELECT id, titulo,img_id from blog';
+        var rows = await pool.query(query);
+        return rows;   
+}
+
+async function getapiEntradasBlog ()
+{    
+        var query = 'SELECT * from blog';
         var rows = await pool.query(query);
         return rows;   
 }
@@ -66,6 +73,7 @@ async function getPostById(id) {
       url_imagen: rows[0].url_imagen,
       fec_alta: fecha,
       usuario_alta: rows[0].usuario_alta,
+      img_original: rows[0].img_id,
     };
   
     return fila;
@@ -89,5 +97,5 @@ async function getPostById(id) {
 
 
 
-module.exports = {getEntradasBlog, insertPost, deletePostById, getPostById, editarPostById}
+module.exports = {getEntradasBlog, insertPost, deletePostById, getPostById, editarPostById, getapiEntradasBlog}
 

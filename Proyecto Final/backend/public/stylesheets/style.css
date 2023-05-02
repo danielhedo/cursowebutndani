@@ -149,3 +149,13 @@ flex-grow: 11;
   background-color: #eee;
   color: #777;
 }
+
+.table-responsive td.text-center {
+  text-align: center;
+}
+
+.form-group.col-md-4
+{
+  display: flex;
+  align-items: center;
+}

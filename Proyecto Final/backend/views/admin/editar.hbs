@@ -4,7 +4,8 @@
 <!-- Fila bienvenido-->
 <div class="logout">
     <p class="bienvenido negro">Bienvenid@, {{persona}}.</p>
-    <a href="/admin/login/logout" class="salida negro">Cerrar sesión <i class="fas fa-right-from-bracket" class="negro"></i></a>
+    <a href="/admin/login/logout" class="salida negro">Cerrar sesión <i class="fas fa-right-from-bracket"
+            class="negro"></i></a>
 </div>
 <!--Fin fila-->
 <div class="contentText" style="padding: 3%; padding-right: 5%;">
@@ -13,8 +14,9 @@
     </div>
 </div>
 <div class="container generalbackend">
-    <form action="/admin/blog/editar" method="post">
-    <input type="hidden" value="{{post.id}}" name="id">
+    <form action="/admin/blog/editar" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="{{post.id}}" name="id">
+        <input type="hidden" value="{{post.img_original}}" name="img_original">
         <div class="row">
             <div class="form-group">
                 <label for="titulo">Título</label>
@@ -30,14 +32,30 @@
         <div class="row">
             <div class="form-group">
                 <label for="form-body">Cuerpo</label>
-                <textarea type="text" class="form-control" id="form-body" rows="5" name="cuerpo">{{post.cuerpo}}</textarea>
+                <textarea type="text" class="form-control" id="form-body" rows="5"
+                    name="cuerpo">{{post.cuerpo}}</textarea>
             </div>
         </div>
         <div class="row">
             <div class="form-group">
                 <label for="url_imagen">URL de imagen</label>
-                <div class="input-group mb-3">                    
-                    <input type="text" class="form-control" id="url_imagen" name="url_imagen" value="{{post.url_imagen}}">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="url_imagen" name="url_imagen"
+                        value="{{post.url_imagen}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-8">
+                <label for="imagen_cloudinary">URL Cloudinary</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="imagen_cloudinary" name="imagen_cloudinary">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="img_delete" name="img_delete" value="1">
+                    <label class="form-check-label" for="lbl_delete">¿Eliminar imagen actual?</label>
                 </div>
             </div>
         </div>
@@ -48,7 +66,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="usuario_alta">Usuario de alta</label>
-                <input type="text" class="form-control disabled-input" id="usuario_alta" name="usuario_alta" value="{{post.usuario_alta}}" readonly>
+                <input type="text" class="form-control disabled-input" id="usuario_alta" name="usuario_alta"
+                    value="{{post.usuario_alta}}" readonly>
             </div>
         </div>
         <div class="form-group" style="margin-top: 3%; margin-bottom: 5%;">
