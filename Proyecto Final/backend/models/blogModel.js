@@ -11,7 +11,7 @@ async function getEntradasBlog ()
 
 async function getapiEntradasBlog ()
 {    
-        var query = 'SELECT * from blog';
+        var query = 'SELECT * from blog order by fec_alta desc';
         var rows = await pool.query(query);
         return rows;   
 }

@@ -65,6 +65,7 @@ router.post('/nuevo', async (req, res, next) => {
 
       await blogModel.insertPost({
         ...req.body,
+        usuario_alta: req.body.usuario_alta.toUpperCase(),
         img_id
       });
       res.redirect('/admin/blog')

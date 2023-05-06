@@ -15,14 +15,19 @@ h3
     margin-top: 1%;
 }
 
-h5
+h6
 {
     font-style: italic;
 }
 
 .contentblog
 {
-    text-align: justify;
-    margin-right: 20px;
-    margin-bottom: 2%;
+    text-align: justify;    
+    margin-top: 1%;
+    padding-left: 50%;
 }
+
+.imagen-blog {
+    width: 150px;
+    height: 150px;
+  }

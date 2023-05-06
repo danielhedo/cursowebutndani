@@ -12,18 +12,20 @@ router.get('/blog', async function (req, res, next) {
         if (blog.img_id) {
             const imagen = cloudinary.url(blog.img_id,
                 {
-                    width: 960,
-                    height: 200,
+                    //width: 960,
+                    //height: 200,
                     crop: 'fill'
                 });
             return {
                 ...blog,
-                imagen
+                imagen,
+                fec_alta: new Date(blog.fec_alta).toLocaleDateString('es-ES')
             }
         } else {
             return {
                 ...blog,
-                imagen: ''
+                imagen: '',
+                fec_alta: new Date(blog.fec_alta).toLocaleDateString('es-ES'),
             }
         }
     });
