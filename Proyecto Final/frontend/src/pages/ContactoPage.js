@@ -68,7 +68,7 @@ const ContactoPage = (props) => {
 
           <Form.Group as={Col} controlId="formGridTelf">
             <Form.Label>Teléfono</Form.Label>
-            <Form.Control type="number" name="telefono" value={formData.telefono} onChange={handleChange} />
+            <Form.Control type="text" name="telefono" value={formData.telefono} onChange={handleChange} />
           </Form.Group>
         </Row>
 

@@ -51,7 +51,10 @@ router.get('/nuevoUser', async (req, res, next) => {
 router.post('/nuevoUser', async (req, res, next) => {
     try {
         var tiposUsuario = await usuariosModel.getTiposUsuario();
-        if (req.body.usuario != "" && req.body.password != "" && req.body.password2 != "") {
+        var usuarios = await usuariosModel.getUsuarios();
+        var usuarioEncontrado = usuarios.find(usuario => usuario.usuario === req.body.usuario);
+
+        if (req.body.usuario != "" && req.body.password != "" && req.body.password2 != "" && usuarioEncontrado == false) {
 
             if (req.body.password != req.body.password2) {
                 res.render('admin/nuevoUser', {
@@ -74,10 +77,19 @@ router.post('/nuevoUser', async (req, res, next) => {
             }
 
         } else {
+
+            var mensaje = "";
+            if (usuarioEncontrado) {
+                mensaje = "Error, ya existe un usuario con ese nombre";
+            }
+            else {
+                mensaje = "Error, todos los campos son requeridos";
+            }
+
             res.render('admin/nuevoUser', {
                 layout: 'admin/layout',
                 error: true,
-                message: 'Error, todos los campos son requeridos.',
+                message: mensaje,
                 persona: req.session.nombre,
                 tiposUsuario
             });
@@ -87,7 +99,7 @@ router.post('/nuevoUser', async (req, res, next) => {
         res.render('admin/nuevoUser', {
             layout: 'admin/layout',
             error: true,
-            message: 'Error. no se creó el usuario.',
+            message: 'Error, no se creó el usuario.',
             persona: req.session.nombre,
             tiposUsuario
         });

@@ -80,7 +80,7 @@ async function editarUserById (obj, id)
         {
             throw error;
         }
-  }
+  }  
 
 
 module.exports = { getUserByUsernameAndPassword, getUsuarios, insertUser, getTiposUsuario, deleteUser, activateUser,getUserByID, editarUserById }
