@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-
+import { Spinner } from "react-bootstrap";
 import "../css/estiloContacto.css";
 import axios from "axios";
 
@@ -86,8 +86,13 @@ const ContactoPage = (props) => {
           Enviar
         </Button>
       </Form>
-      {sending ? <p>Enviando...</p> : null}
-      {msg ? <p>{msg}</p> : null}
+      {sending ? (
+        <div className="d-flex align-items-center">
+          <span className="me-2">Enviando... </span>
+          <Spinner animation="border" variant="primary" size="sm" />
+        </div>
+      ) : null}
+      {msg ? <span className="me-2">{msg}</span> : null}
 
       <div className="text-center diviconos">
         <ul className="listaiconos list-unstyled">
