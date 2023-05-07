@@ -1,0 +1,57 @@
+<head>
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+</head>
+<!-- Fila bienvenido-->
+<div class="logout">
+    <p class="bienvenido negro">Bienvenid@, {{persona}}.</p>
+    <a href="/admin/login/logout" class="salida negro">Cerrar sesión <i class="fas fa-right-from-bracket"
+            class="negro"></i></a>
+</div>
+{{#if boolTipoUser}}
+<div style="margin-top: 1%;">
+    <a href="/admin/blog" class="menu-interno"><i class="fa-solid fa-blog"></i> Blog</a>
+</div>
+{{/if}}
+<!--Fin fila-->
+<!--Fila título de la página -->
+<div class="contentText" style="padding: 3%; padding-right: 5%;">
+    <div class="display-btn-post">
+        <h2 style="margin-right: 10px;"><i class="fa-solid fa-users-gear"></i> Usuarios</h2>
+        <a class="btn btn-success btn-sm" href="/admin/usuarios/nuevoUser" title="Nueva entrada blog"><i
+                class="fa-solid fa-plus fa-fade"></i> Nuevo usuario</a>
+    </div>
+</div>
+<div class="generaltablaBlog">
+    <!--Fin título página-->
+    <div class="table-responsive">
+        <table class="table table-sm">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Tipo de usuario</th>
+                    <th class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each usuarios}}
+                <tr {{#if fec_baja}}class="baja" {{/if}}>
+                    <td>{{id}}</td>
+                    <td>{{usuario}}</td>
+                    <td>{{des_tipo_usuario}}</td>
+                    <td class="text-end">
+                        <a class="fas fa-pencil-alt negro" href="/admin/usuarios/editarUser/{{id}}" title="Editar trabajador"></a>
+                        {{#if fec_baja}}
+                        <a class="fa-solid fa-circle" style="color: green; text-decoration: none;" href="/admin/usuarios/activarUsuario/{{id}}" title="Activar usuario"></a>
+                        {{else}}
+                        <a class="fas fa-trash-alt negro" style="color: #dc3545;" href="/admin/usuarios/bajaUsuario/{{id}}" title="Dar de baja"></a>
+                        {{/if}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <!---->
+
+</div>

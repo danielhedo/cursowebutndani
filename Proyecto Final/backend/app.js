@@ -16,6 +16,7 @@ var usersRouter = require('./routes/users');
 //Acceso administrador
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/blog');
+var userRouter = require('./routes/admin/usuarios');
 var apiRouter = require('./routes/api');
 
 var app = express();
@@ -40,7 +41,6 @@ app.use(session({
 
 secured = async (req, res, next) => {
   try {
-    console.log(req.session.id_usuario);
     if (req.session.id_usuario) {
       next();
     }
@@ -52,8 +52,25 @@ secured = async (req, res, next) => {
   catch (error) {
     console.log(error);
   }
-
 }
+
+//Creamos seguridad para que los usuarios redactores no puedan ver el sistema de administración de usuarios.
+secured2 = async (req, res, next) => {
+  try {
+    if (req.session.id_usuario && req.session.cod_tipo_usuario == 1) {
+      next();
+    }
+    else {
+      res.redirect('/admin/blog');
+
+    }
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+
 
 app.use(fileUpload({
   useTempFiles: true,
@@ -66,6 +83,7 @@ app.use('/users', usersRouter);
 //administrador
 app.use('/admin/login', loginRouter);
 app.use('/admin/blog', secured, adminRouter);
+app.use('/admin/usuarios', secured2, userRouter);
 //
 app.use('/api', cors(), apiRouter);
 

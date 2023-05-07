@@ -2,11 +2,22 @@ var pool = require('./db');
 
 
 
-async function getEntradasBlog ()
+async function getEntradasBlog (persona)
 {    
-        var query = 'SELECT id, titulo,img_id from blog';
-        var rows = await pool.query(query);
-        return rows;   
+        //Original
+        //var query = 'SELECT id, titulo,img_id from blog ';
+        //var rows = await pool.query(query);
+        //return rows;
+        
+        var tipoUsuario = await pool.query('SELECT cod_tipo_usuario FROM usuarios WHERE usuario = ?', [persona]);
+
+        var query = 'SELECT id, titulo, img_id FROM blog';
+        if (tipoUsuario[0].cod_tipo_usuario === 2) {
+            query += ' WHERE usuario_alta = ?';
+          }
+
+          var rows = await pool.query(query, [persona]);
+          return rows;
 }
 
 async function getapiEntradasBlog ()

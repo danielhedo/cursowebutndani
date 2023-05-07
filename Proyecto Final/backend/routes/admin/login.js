@@ -36,7 +36,7 @@ router.post("/", async (req, res, next) => {
 
       req.session.id_usuario = data.id;
       req.session.nombre = data.usuario;
-
+      req.session.cod_tipo_usuario = data.cod_tipo_usuario;
       res.redirect("/admin/blog");
     } else {
       res.render("admin/login", {

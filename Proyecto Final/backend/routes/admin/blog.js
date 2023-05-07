@@ -10,9 +10,16 @@ const destroy = util.promisify(cloudinary.uploader.destroy);
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
+  var persona = req.session.nombre;
+  var boolTipoUser = false;
+  if(req.session.cod_tipo_usuario === 1)
+  {
+    boolTipoUser = true
+  }
 
-  var blog = await blogModel.getEntradasBlog();
-
+  var tipoUser = req.session.cod_tipo_usuario;
+  var blog = await blogModel.getEntradasBlog(persona);
+  
   blog = blog.map(nuevopost => {
 
     if (nuevopost.img_id) {
@@ -36,6 +43,7 @@ router.get('/', async function (req, res, next) {
   res.render('admin/blog', {
     layout: 'admin/layout',
     persona: req.session.nombre,
+    boolTipoUser,
     blog
   });
 });
@@ -116,7 +124,6 @@ router.get('/editar/:id', async (req, res, next) => {
       post,
       persona: req.session.nombre
     })
-  console.log(post);
 });
 
 
@@ -126,16 +133,11 @@ router.post('/editar', async (req, res, next) => {
     let img_id = req.body.img_original;
     let borrar_img_vieja = false;
 
-    console.log(req.body.img_original);
-
     if (req.body.img_delete === "1") {
-      console.log("Entro if");
       img_id = null;
       borrar_img_vieja = true;
     } else {
-      console.log("Entro else");
       if (req.files && Object.keys(req.files).length > 0) {
-        console.log("Entro if dentro del else");
         imagen_cloudinary = req.files.imagen_cloudinary;
         img_id = (await uploader(imagen_cloudinary.tempFilePath)).public_id;
         borrar_img_vieja = true;
@@ -143,7 +145,6 @@ router.post('/editar', async (req, res, next) => {
     }
 
     if (borrar_img_vieja && req.body.img_original) {
-      console.log("entro aquí");
       await (destroy(req.body.img_original));
     }
 
