@@ -17,9 +17,14 @@ router.get('/', async function (req, res, next) {
 
     var usuarios = await usuariosModel.getUsuarios();
 
+    usuarios.forEach(function (usuario) {
+        usuario.esMismoUser = (usuario.usuario === persona);
+    });
+    console.log(usuarios);
+
     res.render('admin/usuarios', {
         layout: 'admin/layout',
-        persona: req.session.nombre,
+        persona: persona,
         boolTipoUser,
         usuarios
     });
@@ -54,7 +59,7 @@ router.post('/nuevoUser', async (req, res, next) => {
         var usuarios = await usuariosModel.getUsuarios();
         var usuarioEncontrado = usuarios.find(usuario => usuario.usuario === req.body.usuario);
 
-        if (req.body.usuario != "" && req.body.password != "" && req.body.password2 != "" && usuarioEncontrado == false) {
+        if (req.body.usuario != "" && req.body.password != "" && req.body.password2 != "" && usuarioEncontrado === undefined) {
 
             if (req.body.password != req.body.password2) {
                 res.render('admin/nuevoUser', {
@@ -149,7 +154,16 @@ router.get('/editarUser/:id', async (req, res, next) => {
     var id = req.params.id;
     var usuario = await usuariosModel.getUserByID(id);
     var tiposUsuario = await usuariosModel.getTiposUsuario();
-    console.log(tiposUsuario);
+
+    tiposUsuario.forEach(tipo => {
+        if (tipo.cod_tipo_usuario == usuario.cod_tipo_usuario) {
+            tipo.selected = true;
+        }
+        else {
+            tipo.selected = false;
+        }
+    });
+
     var esMismoUser = false;
     if (req.session.nombre === usuario.usuario) {
         esMismoUser = true;
@@ -199,6 +213,9 @@ router.post('/editarUser', async (req, res, next) => {
 
             }
 
+        }
+        else {
+            continuo = true;
         }
 
         if (continuo) {

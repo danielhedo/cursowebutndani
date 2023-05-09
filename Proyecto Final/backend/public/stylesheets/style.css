@@ -129,9 +129,24 @@ flex-grow: 11;
 .generaltablaBlog
  {  
     padding: 3%;
+    padding-right: 10%;
+    padding-left: 10%;
+ }
+ .generaltablaUser
+ {  
+    padding: 3%;
     padding-right: 15%;
     padding-left: 15%;
  }
+
+ .generalNuevoUser
+ {
+  padding-left: 13%; 
+  padding-right: 13%; 
+  padding-top: 1%; 
+  padding-bottom: 1%;
+ }
+
  
  .disabled-input {
   background-color: #eee;

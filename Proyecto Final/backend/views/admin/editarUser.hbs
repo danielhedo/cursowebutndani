@@ -37,7 +37,7 @@
                 <label for="tipoUsuario">Tipo de usuario</label>
                 <select class="form-control" id="cod_tipo_usuario" name="cod_tipo_usuario">
                     {{#each tiposUsuario}}
-                    <option value="{{this.cod_tipo_usuario}}">{{this.des_tipo_usuario}}</option>
+                    <option value="{{this.cod_tipo_usuario}}" {{#if this.selected}}selected="selected"{{/if}} >{{this.des_tipo_usuario}}</option>
                     {{/each}}
                 </select>
             </div>

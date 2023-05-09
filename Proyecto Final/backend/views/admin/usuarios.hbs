@@ -21,7 +21,7 @@
                 class="fa-solid fa-plus fa-fade"></i> Nuevo usuario</a>
     </div>
 </div>
-<div class="generaltablaBlog">
+<div class="generaltablaUser">
     <!--Fin título página-->
     <div class="table-responsive">
         <table class="table table-sm">
@@ -40,11 +40,16 @@
                     <td>{{usuario}}</td>
                     <td>{{des_tipo_usuario}}</td>
                     <td class="text-end">
-                        <a class="fas fa-pencil-alt negro" href="/admin/usuarios/editarUser/{{id}}" title="Editar trabajador"></a>
+                        <a class="fas fa-pencil-alt negro" href="/admin/usuarios/editarUser/{{id}}"
+                            title="Editar trabajador"></a>
                         {{#if fec_baja}}
-                        <a class="fa-solid fa-circle" style="color: green; text-decoration: none;" href="/admin/usuarios/activarUsuario/{{id}}" title="Activar usuario"></a>
+                        <a class="fa-solid fa-circle" style="color: green; text-decoration: none;"
+                            href="/admin/usuarios/activarUsuario/{{id}}" title="Activar usuario"></a>
                         {{else}}
-                        <a class="fas fa-trash-alt negro" style="color: #dc3545;" href="/admin/usuarios/bajaUsuario/{{id}}" title="Dar de baja"></a>
+                        {{#unless esMismoUser}}
+                        <a class="fas fa-trash-alt negro" style="color: #dc3545;"
+                            href="/admin/usuarios/bajaUsuario/{{id}}" title="Dar de baja"></a>
+                        {{/unless}}
                         {{/if}}
                     </td>
                 </tr>
