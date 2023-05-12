@@ -38,7 +38,7 @@
         </div>
         <div class="row">
             <div class="form-group">
-                <label for="url_imagen">URL de imagen</label>
+                <label for="url_imagen">URL de imagen (.jpg, .gif, .png)</label>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="url_imagen" name="url_imagen"
                         value="{{post.url_imagen}}">
@@ -75,6 +75,8 @@
         </div>
     </form>
     {{#if error}}
-    <p>{{message}}</p>
+    <div class="form-group espaciado-enviar">
+        <p class="msg-error">{{message}}</p>
+    </div>
     {{/if}}
 </div>

@@ -61,15 +61,34 @@ router.post('/nuevo', async (req, res, next) => {
   try {
 
     var img_id = '';
+    var tieneExtensionValida = true; 
 
+    if (req.body.url_imagen != "")
+    {
+      var urlImagen = req.body.url_imagen.toLowerCase();
+      var extensionesValidas = ['.jpg', '.gif', '.png'];
+      tieneExtensionValida = extensionesValidas.some(extension => urlImagen.endsWith(extension));
+    }    
 
+ 
     if (req.files && Object.keys(req.files).length > 0) {
       imagen_cloudinary = req.files.imagen_cloudinary;
       img_id = (await uploader(imagen_cloudinary.tempFilePath)).public_id;
-
-    }
+    }    
+    
 
     if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.cuerpo != "") {
+
+      if(req.body.url_imagen != "" && !tieneExtensionValida)
+      {
+        res.render('admin/nuevo', {
+          layout: 'admin/layout',
+          error: true,
+          message: 'Error, solo se permiten imágenes en formato .jgp, .gif o .png.',
+          persona: req.session.nombre
+        })
+      }
+      else{
 
       await blogModel.insertPost({
         ...req.body,
@@ -77,6 +96,7 @@ router.post('/nuevo', async (req, res, next) => {
         img_id
       });
       res.redirect('/admin/blog')
+    }
     }
     else {
       res.render('admin/nuevo', {
@@ -97,7 +117,7 @@ router.post('/nuevo', async (req, res, next) => {
     })
   }
 
-})
+});
 
 router.get('/eliminar/:id', async (req, res, next) => {
   var id = req.params.id;
